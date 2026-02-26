@@ -41,3 +41,9 @@ print()
 df.to_csv("data/nsl_kdd_cleaned.csv", index=False)
 
 print("Cleaned dataset saved successfully!")
+print("Missing values:")
+print(df.isnull().sum().sum())
+print()
+
+print("Data types:")
+print(df.dtypes.value_counts())
