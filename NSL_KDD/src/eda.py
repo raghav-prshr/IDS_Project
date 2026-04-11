@@ -19,6 +19,11 @@ columns = [
 "dst_host_srv_count","dst_host_same_srv_rate","dst_host_diff_srv_rate",
 "dst_host_same_src_port_rate","dst_host_srv_diff_host_rate",
 "dst_host_serror_rate","dst_host_srv_serror_rate",
+
+# 4. Convert to binary (normal = 0, attack = 1)
+df["label"] = df["label"].apply(lambda x: 0 if x == "normal" else 1)
+
+print("Class distribution after conv
 "dst_host_rerror_rate","dst_host_srv_rerror_rate",
 "label","difficulty"
 ]
